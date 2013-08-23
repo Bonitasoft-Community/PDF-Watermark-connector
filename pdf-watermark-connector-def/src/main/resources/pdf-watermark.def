@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.0">
+  <id>pdf-watermark</id>
+  <version>1.0.0</version>
+  <icon>pdf.gif</icon>
+  <category icon="document.gif" id="document"/>
+  <input mandatory="true" name="pdfDocumentId" type="java.lang.String"/>
+  <input mandatory="false" name="watermarkImageId" type="java.lang.String"/>
+  <input defaultValue="0.0" mandatory="false" name="xPosition" type="java.lang.Float"/>
+  <input defaultValue="0.0" name="yPosition" type="java.lang.Float"/>
+  <input mandatory="true" name="outputDocument" type="java.lang.String"/>
+  <page id="watermarkk-page">
+    <widget xsi:type="definition:Text" id="pdfDocument" inputName="pdfDocumentId" showDocuments="true"/>
+    <widget xsi:type="definition:Text" id="watermarkImage" inputName="watermarkImageId" showDocuments="true"/>
+    <widget xsi:type="definition:Group" id="watermark-position" optional="true">
+      <widget xsi:type="definition:Text" id="xPos" inputName="xPosition"/>
+      <widget xsi:type="definition:Text" id="yPos" inputName="yPosition"/>
+    </widget>
+    <widget xsi:type="definition:Text" id="outputDocumentId" inputName="outputDocument" showDocuments="true"/>
+  </page>
+</definition:ConnectorDefinition>
